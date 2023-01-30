@@ -1,0 +1,13 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  /* width: 1024px;
+  height: 780px;
+  background-color: white; */
+
+}
+.content{
+  display: flex;
+
+}

@@ -1,4 +1,4 @@
-import './App.css';
+import styles from './App.module.css';
 import BarHorizontal from './components/BarHorizontal/BarHorizontal';
 import BarVertical from './components/BarVertical/BarVertical';
 import Home from './components/Home/Home';
@@ -6,10 +6,12 @@ import Home from './components/Home/Home';
 
 function App() {
   return (
-    <div className="App">
+    <div className={styles.App}>
         <BarHorizontal />
-        <BarVertical />
-        <Home />
+        <div className={styles.content}>
+          <BarVertical />
+          <Home />
+        </div>
 
     </div>
   );
