@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
-export default function useUser(userId) {
+export default function useUserActivity(userId) {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -9,7 +9,7 @@ export default function useUser(userId) {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://localhost:3000/user/${userId}`)
+      .get(`http://localhost:3000/user/${userId}/activity`)
       .then((response) => {
         setData(response.data);
         setLoading(false);

@@ -3,7 +3,7 @@
     padding: 0 2rem;
     width: fit-content;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
 }
 
 .header h1{
@@ -12,4 +12,7 @@
 }
 h1 strong{
     color: #ff0000;
+}
+.header p{
+    font-weight: 500;
 }

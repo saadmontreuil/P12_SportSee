@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import logo from '../../images/logo.svg'
-import styles from './BarHorizontal.module.css'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import logo from '../../images/logo.svg';
+import styles from './BarHorizontal.module.css';
 
 export default function BarHorizontal() {
   return (
@@ -33,5 +33,5 @@ export default function BarHorizontal() {
         </li>
       </ul>
     </nav>
-  )
+  );
 }
