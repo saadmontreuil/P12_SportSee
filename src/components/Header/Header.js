@@ -6,7 +6,7 @@ export default function Header({ user }) {
     <div className={styles.header}>
       <h1>
         Bonjour
-        <strong>{user?.firstName}</strong>
+        <strong> {user?.firstName}</strong>
       </h1>
       <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
     </div>

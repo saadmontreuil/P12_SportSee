@@ -1,37 +1,29 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import useUser from '../../hooks/useUser';
-import useActivity from '../../hooks/useActivity';
+// import useUser from '../../hooks/useUser';
+import { getUserInfos } from '../../service/userRequest';
 import Header from '../Header/Header';
-import Weights from '../Weights/Weights';
+// import Weights from '../Weights/Weights';
 import styles from './Home.module.css';
 
-import getUserInfo from '../../service/userRequest';
+// import getUserInfo from '../../service/userRequest';
 
 export default function Home() {
-  const location = useLocation();
-  const [active, setActive] = useState('12');
+  const [dataUser, setDataUser] = useState(null);
 
   useEffect(() => {
-    getUserInfo(12);
+    const fetchData = async () => {
+      const userInfos = await getUserInfos(12);
+      setDataUser(userInfos);
+    };
+    fetchData();
+  }, []);
 
-    const { pathname } = location;
-
-    if (pathname === '/18') {
-      setActive('18');
-    } else if (pathname === '/12') {
-      setActive('12');
-    }
-  }, [location]);
-
-  const { data: dataUser } = useUser(active);
-  const { data: dataActivity } = useActivity(active);
-  console.log(dataActivity?.data?.sessions);
+  console.log(dataUser);
 
   return (
     <div className={styles.home}>
-      <Header user={dataUser?.data?.userInfos} />
-      <Weights data={dataActivity?.data?.sessions} />
+      <Header user={dataUser} />
+      {/* <Weights data={dataActivity?.data?.sessions} /> */}
     </div>
   );
 }
