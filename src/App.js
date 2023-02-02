@@ -1,7 +1,7 @@
 import styles from './App.module.css';
 import BarHorizontal from './components/BarHorizontal/BarHorizontal';
 import BarVertical from './components/BarVertical/BarVertical';
-import Home from './components/Home/Home';
+import Profil from './pages/ProfilPage';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <BarHorizontal />
       <div className={styles.content}>
         <BarVertical />
-        <Home />
+        <Profil />
       </div>
 
     </div>
