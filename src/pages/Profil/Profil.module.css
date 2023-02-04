@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding: 0 2rem;
 }
 .dashboardContainer{
     display: flex;
@@ -10,4 +11,8 @@
     justify-content: space-evenly;
     height: 100%;
     width: 70%;
+}
+.session{
+    width: 70%;
+    height: 100%;
 }

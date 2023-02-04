@@ -50,8 +50,8 @@ export default function Activity({ data }) {
             iconType="circle"
             iconSize={8}
             height={60}
+            width={(500)}
             align="right"
-            width={600}
             formatter={legendFormatter}
           />
           <Bar
@@ -71,6 +71,19 @@ export default function Activity({ data }) {
             barSize={10}
             name="Calories brulées (kCal)"
           />
+          <text
+            x={15}
+            y={15}
+            dominantBaseline="middle"
+            fill="#20253A"
+            style={{
+              fontWeight: 600,
+              fontSize: 20,
+              fontFamily: 'roboto',
+            }}
+          >
+            Activité quotidienne
+          </text>
         </BarChart>
       </ResponsiveContainer>
     </div>

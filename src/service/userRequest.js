@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {
-  USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSION, USER_PERFORMANCE,
+  USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE,
 } from '../mockData/data';
 import UserInfosModel from './model/UserInfosModel';
 import UserActivityModel from './model/UserActivityModel';
@@ -48,10 +48,11 @@ const getUserAverageSession = async (userId) => {
   try {
     let userAverageSession;
     if (isMockData) {
-      userAverageSession = USER_AVERAGE_SESSION.find((user) => user.userId === userId);
+      userAverageSession = USER_AVERAGE_SESSIONS.find((user) => user.userId === userId);
     } else {
       const response = await axios.get(`http://localhost:3000/user/${userId}/average-sessions`);
-      userAverageSession = response.data;
+      userAverageSession = response.data.data;
+      console.log(userAverageSession);
     }
     return new UserAverageSessionModel(userAverageSession);
   } catch (error) {
