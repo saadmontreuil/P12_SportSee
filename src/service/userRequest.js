@@ -35,7 +35,7 @@ const getUserActivity = async (userId) => {
       userActivity = USER_ACTIVITY.find((user) => user.userId === userId);
     } else {
       const response = await axios.get(`http://localhost:3000/user/${userId}/activity`);
-      userActivity = response.data;
+      userActivity = response.data.data;
     }
     return new UserActivityModel(userActivity);
   } catch (error) {

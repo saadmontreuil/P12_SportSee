@@ -11,10 +11,3 @@
   display: flex;
 
 }
-.home{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  height: 100%;
-  width: 70%;
-}

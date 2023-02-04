@@ -1,7 +1,7 @@
 import styles from './App.module.css';
 import BarHorizontal from './components/BarHorizontal/BarHorizontal';
 import BarVertical from './components/BarVertical/BarVertical';
-import Profil from './pages/ProfilPage';
+import Profil from './pages/Profil/ProfilPage';
 
 function App() {
   return (

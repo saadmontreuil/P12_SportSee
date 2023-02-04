@@ -1,0 +1,14 @@
+.customTooltip {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: #E60000;
+  }
+  
+  .text {
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 5px;
+  }
