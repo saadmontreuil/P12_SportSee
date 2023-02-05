@@ -1,8 +1,11 @@
 import React from 'react';
 import {
-  LineChart, Line, XAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
+  LineChart, Line, XAxis, CartesianGrid, Tooltip, ResponsiveContainer,
 } from 'recharts';
 import styles from './Session.module.css';
+import CustomTooltip from './CustomToolTip';
+import CustomCursor from './CustomCursor';
+import CustomDot from './CustomDot';
 
 export default function SessionLineChart({ data }) {
   return (
@@ -21,15 +24,28 @@ export default function SessionLineChart({ data }) {
         >
           <CartesianGrid strokeDasharray="3 3" vertical={false} horizontal={false} />
           <XAxis dataKey="day" tickLine={false} axisLine={false} stroke="#FFFFFF" />
-          <Tooltip />
-          <Legend
-            iconSize={10}
-            width={20}
-            height={20}
-            layout="vertical"
-            verticalAlign="top"
+          <Tooltip
+            content={<CustomTooltip />}
+            wrapperStyle={{ background: '#FFFFFF', outline: 'none' }}
+            cursor={<CustomCursor />}
           />
-          <Line type="monotone" dataKey="sessionLength" stroke="white" activeDot={{ r: 8 }} />
+          <Line
+            type="monotone"
+            dataKey="sessionLength"
+            stroke="white"
+            activeDot={<CustomDot />}
+          />
+          <text
+            x="8%"
+            y="10%"
+            textAnchor="start"
+            dominantBaseline="middle"
+            fill="#FFFFFF"
+            style={{ fontSize: 14, fontWeight: 500, opacity: 0.7 }}
+          >
+            Durée moyenne des
+            <tspan x="8%" y="18%">sessions</tspan>
+          </text>
         </LineChart>
       </ResponsiveContainer>
     </div>

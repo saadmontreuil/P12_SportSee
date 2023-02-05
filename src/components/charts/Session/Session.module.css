@@ -4,3 +4,16 @@
     height: 89%;
     border-radius: 4%;
 }
+.CustomTooltip{
+  align-items: center;
+  display: flex;
+  font-family: "Roboto";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  height: 25px;
+  justify-content: center;
+  line-height: 24px;
+  outline-color: none;
+  width: 50px;
+}
