@@ -8,6 +8,7 @@ import styles from './Profil.module.css';
 import SessionLineChart from '../../components/charts/Session/SessionLineChart';
 import PerformanceRadarChart from '../../components/charts/Performance/PerformanceRadarChart';
 import ScoreRadialBarChart from '../../components/charts/Score/ScoreRadialBarChart';
+import Nutrition from '../../components/Nutrition/Nutrition';
 
 export default function Profil() {
   const [dataUser, setDataUser] = useState(null);
@@ -32,20 +33,22 @@ export default function Profil() {
     fetchData();
   }, []);
 
-  console.log(dataUser?.score);
+  console.log(dataUser);
 
   return (
-    <div className={styles.dashboard}>
-      <Header user={dataUser} />
-      <div className={styles.dashboardContainer}>
-        <Activity data={userActivity?.sessions} />
+    <div className={styles.profile}>
+      <div className={styles.dashboard}>
+        <Header user={dataUser} />
+        <div className={styles.dashboardContainer}>
+          <Activity data={userActivity?.sessions} />
+        </div>
+        <div className={styles.session}>
+          <SessionLineChart data={userAverageSession?.sessions} />
+          <PerformanceRadarChart data={userPerformance?.data} />
+          <ScoreRadialBarChart data={dataUser?.score} />
+        </div>
       </div>
-      <div className={styles.session}>
-        <SessionLineChart data={userAverageSession?.sessions} />
-        <PerformanceRadarChart data={userPerformance?.data} />
-        <ScoreRadialBarChart data={dataUser?.score} />
-
-      </div>
+      <Nutrition data={dataUser} />
     </div>
   );
 }
