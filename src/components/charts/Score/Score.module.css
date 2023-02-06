@@ -1,0 +1,21 @@
+.chartRadial{
+    width: 31%;
+    height: 89%;
+    border-radius: 4%;
+}
+.legend{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 120px;  
+}
+.legend span{
+    font-size: 16px;
+    font-weight: 500;
+    color: #74798C  ;
+}
+.legend h2{
+    margin-bottom: 5px;
+    font-size: 26px;
+    font-weight: 700;
+}

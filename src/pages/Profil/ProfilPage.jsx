@@ -7,6 +7,7 @@ import Activity from '../../components/charts/Activity/Activity';
 import styles from './Profil.module.css';
 import SessionLineChart from '../../components/charts/Session/SessionLineChart';
 import PerformanceRadarChart from '../../components/charts/Performance/PerformanceRadarChart';
+import ScoreRadialBarChart from '../../components/charts/Score/ScoreRadialBarChart';
 
 export default function Profil() {
   const [dataUser, setDataUser] = useState(null);
@@ -30,7 +31,8 @@ export default function Profil() {
     };
     fetchData();
   }, []);
-  console.log(userPerformance?.data);
+
+  console.log(dataUser?.score);
 
   return (
     <div className={styles.dashboard}>
@@ -41,6 +43,8 @@ export default function Profil() {
       <div className={styles.session}>
         <SessionLineChart data={userAverageSession?.sessions} />
         <PerformanceRadarChart data={userPerformance?.data} />
+        <ScoreRadialBarChart data={dataUser?.score} />
+
       </div>
     </div>
   );
