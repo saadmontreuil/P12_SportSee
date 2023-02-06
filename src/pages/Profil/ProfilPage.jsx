@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useParams, Navigate } from 'react-router-dom';
 import {
   getUserInfos, getUserActivity, getUserAverageSession, getUserPerformance,
 } from '../../service/userRequest';
@@ -16,24 +17,29 @@ export default function Profil() {
   const [userAverageSession, setUserAverageSession] = useState(null);
   const [userPerformance, setUserPerformance] = useState(null);
 
+  const { id } = useParams();
+  const userId = +id;
+
   useEffect(() => {
     const fetchData = async () => {
-      const userInfos = await getUserInfos(12);
+      const userInfos = await getUserInfos(userId);
       setDataUser(userInfos);
 
-      const activity = await getUserActivity(12);
+      const activity = await getUserActivity(userId);
       setUserActivity(activity);
 
-      const averageSession = await getUserAverageSession(12);
+      const averageSession = await getUserAverageSession(userId);
       setUserAverageSession(averageSession);
 
-      const performance = await getUserPerformance(12);
+      const performance = await getUserPerformance(userId);
       setUserPerformance(performance);
     };
     fetchData();
   }, []);
 
-  console.log(dataUser);
+  if (userId !== 12 && userId !== 18) {
+    return <Navigate to="/404" />;
+  }
 
   return (
     <div className={styles.profile}>

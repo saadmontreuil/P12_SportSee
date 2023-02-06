@@ -1,0 +1,15 @@
+.error h1{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    text-align: center;
+    color: #333;
+    text-shadow: 2px 2px #ddd;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+}
