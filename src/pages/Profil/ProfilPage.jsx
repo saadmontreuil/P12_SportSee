@@ -38,9 +38,8 @@ export default function Profil() {
     const fetchData = async () => {
       const userInfos = await getUser(userId);
       setDataUser(userInfos);
-      console.log(userInfos);
+
       const activity = await getUser(userId);
-      console.log(activity);
       setUserActivity(activity);
 
       const averageSession = await getUser(userId);
@@ -56,7 +55,7 @@ export default function Profil() {
     return <Navigate to="/404" />;
   }
 
-  console.log(userActivity);
+  console.log(dataUser?.score);
 
   return (
     <div className={styles.profile}>
