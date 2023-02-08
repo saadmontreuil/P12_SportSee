@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
-import {
-  getUserInfos, getUserActivity, getUserAverageSession, getUserPerformance,
-} from '../../service/userRequest';
+// eslint-disable-next-line import/named
+import { getUser } from '../../service/userRequest';
 import Header from '../../components/Header/Header';
 import Activity from '../../components/charts/Activity/Activity';
 import styles from './Profil.module.css';
@@ -20,18 +19,34 @@ export default function Profil() {
   const { id } = useParams();
   const userId = +id;
 
+  const NUTRIENTS = [
+    {
+      name: 'calorie', icon: 'mingcute:fire-fill', color: 'red', type: 'Calories',
+    },
+    {
+      name: 'protein', icon: 'mdi:chicken-leg', color: '#4ab8ff', rotate: 2, type: 'Proteins',
+    },
+    {
+      name: 'carbohydrate', icon: 'fa6-solid:apple-whole', color: '#fdcc0c', type: 'Glucides',
+    },
+    {
+      name: 'lipid', icon: 'fa-solid:hamburger', color: '#fd5181', type: 'Lipides',
+    },
+  ];
+
   useEffect(() => {
     const fetchData = async () => {
-      const userInfos = await getUserInfos(userId);
+      const userInfos = await getUser(userId);
       setDataUser(userInfos);
-
-      const activity = await getUserActivity(userId);
+      console.log(userInfos);
+      const activity = await getUser(userId);
+      console.log(activity);
       setUserActivity(activity);
 
-      const averageSession = await getUserAverageSession(userId);
+      const averageSession = await getUser(userId);
       setUserAverageSession(averageSession);
 
-      const performance = await getUserPerformance(userId);
+      const performance = await getUser(userId);
       setUserPerformance(performance);
     };
     fetchData();
@@ -41,6 +56,8 @@ export default function Profil() {
     return <Navigate to="/404" />;
   }
 
+  console.log(userActivity);
+
   return (
     <div className={styles.profile}>
       <div className={styles.dashboard}>
@@ -49,12 +66,12 @@ export default function Profil() {
           <Activity data={userActivity?.sessions} />
         </div>
         <div className={styles.session}>
-          <SessionLineChart data={userAverageSession?.sessions} />
+          <SessionLineChart data={userAverageSession?.averageSessions} />
           <PerformanceRadarChart data={userPerformance?.data} />
           <ScoreRadialBarChart data={dataUser?.score} />
         </div>
       </div>
-      <Nutrition data={dataUser} />
+      <Nutrition data={dataUser} nutRients={NUTRIENTS} />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  RadialBarChart, RadialBar, Legend, ResponsiveContainer,
+  RadialBarChart, RadialBar, Legend, PolarAngleAxis, ResponsiveContainer,
 } from 'recharts';
 import styles from './Score.module.css';
 import ContentLegend from './LegendFormatter';
@@ -18,14 +18,22 @@ export default function ScoreRadialBarChart({ data }) {
           outerRadius={75}
           barSize={9}
           data={value}
-          startAngle={100}
-          endAngle={0}
+          startAngle={-270}
+          endAngle={90}
         >
+          <PolarAngleAxis
+            type="number"
+            domain={[0, 100]}
+            angleAxisId={1}
+            tick={false}
+
+          />
           <RadialBar
             position="center"
             dataKey="value"
             fill="#ff0000"
             cornerRadius={10}
+            angleAxisId={1}
           />
           <Legend
             iconSize={10}

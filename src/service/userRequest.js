@@ -2,84 +2,38 @@ import axios from 'axios';
 import {
   USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE,
 } from '../mockData/data';
-import UserInfosModel from './model/UserInfosModel';
-import UserActivityModel from './model/UserActivityModel';
-import UserAverageSessionModel from './model/UserAverageSessionModel';
-import UserPerformanceModel from './model/UserPerformanceModel';
+import UserModel from './model/UserModel';
 
 const isMockData = true;
-
-const getUserInfos = async (userId) => {
+const getUser = async (userId) => {
   try {
-    let userInfos;
+    let userData;
     if (isMockData) {
-      userInfos = USER_MAIN_DATA.find((user) => user?.id === userId);
-      console.log(userInfos);
+      userData = USER_MAIN_DATA.find((user) => user?.id === userId);
+      userData.sessions = USER_ACTIVITY.find((user) => user.userId === userId)?.sessions || [];
+      // eslint-disable-next-line max-len
+      userData.averageSessions = USER_AVERAGE_SESSIONS.find((user) => user.userId === userId)?.sessions || [];
+      userData.kind = USER_PERFORMANCE.find((user) => user.userId === userId)?.kind || [];
+      userData.data = USER_PERFORMANCE.find((user) => user.userId === userId)?.data || [];
     } else {
       const response = await axios.get(`http://localhost:3000/user/${userId}`);
-      userInfos = response.data.data;
-      console.log(userInfos);
+      const responseActivity = await axios.get(`http://localhost:3000/user/${userId}/activity`);
+      const responseAverageSessions = await axios.get(`http://localhost:3000/user/${userId}/average-sessions`);
+      const responsePerformance = await axios.get(`http://localhost:3000/user/${userId}/performance`);
+      userData = response.data.data;
+      userData.sessions = responseActivity.data.data.sessions;
+      userData.averageSessions = responseAverageSessions.data.data.sessions;
+      userData.kind = responsePerformance.data.data.kind;
+      userData.data = responsePerformance.data.data.data;
     }
-    return new UserInfosModel(userInfos);
+    return new UserModel(userData);
   } catch (error) {
-    console.error(`Error while getting user infos: ${error}`);
-    console.log(error);
-  }
-  return null;
-};
-
-const getUserActivity = async (userId) => {
-  try {
-    let userActivity;
-    if (isMockData) {
-      userActivity = USER_ACTIVITY.find((user) => user.userId === userId);
-    } else {
-      const response = await axios.get(`http://localhost:3000/user/${userId}/activity`);
-      userActivity = response.data.data;
-    }
-    return new UserActivityModel(userActivity);
-  } catch (error) {
-    console.error(`Error while getting user activity: ${error}`);
-  }
-  return null;
-};
-
-const getUserAverageSession = async (userId) => {
-  try {
-    let userAverageSession;
-    if (isMockData) {
-      userAverageSession = USER_AVERAGE_SESSIONS.find((user) => user.userId === userId);
-    } else {
-      const response = await axios.get(`http://localhost:3000/user/${userId}/average-sessions`);
-      userAverageSession = response.data.data;
-      console.log(userAverageSession);
-    }
-    return new UserAverageSessionModel(userAverageSession);
-  } catch (error) {
-    console.error(`Error while getting user average session: ${error}`);
-  }
-  return null;
-};
-
-const getUserPerformance = async (userId) => {
-  try {
-    let userPerformance;
-    if (isMockData) {
-      userPerformance = USER_PERFORMANCE.find((user) => user.userId === userId);
-    } else {
-      const response = await axios.get(`http://localhost:3000/user/${userId}/performance`);
-      userPerformance = response.data;
-    }
-    return new UserPerformanceModel(userPerformance);
-  } catch (error) {
-    console.error(`Error while getting user performance: ${error}`);
+    console.error(`Error while getting user data: ${error}`);
   }
   return null;
 };
 
 export {
-  getUserInfos,
-  getUserActivity,
-  getUserAverageSession,
-  getUserPerformance,
+  // eslint-disable-next-line import/prefer-default-export
+  getUser,
 };

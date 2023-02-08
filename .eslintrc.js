@@ -23,7 +23,7 @@ module.exports = {
       extensions: ['.js', '.jsx', '.ts'],
     },
     ],
-    'react/prop-types': 'off',
+    'react/prop-types': 'warn',
     'react/jsx-props-no-spreading': 'off',
     'react/jsx-one-expression-per-line': 'off',
     'import/extensions': 'off',

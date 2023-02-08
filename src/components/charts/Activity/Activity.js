@@ -1,4 +1,7 @@
 import React from 'react';
+
+import PropTypes from 'prop-types';
+
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
 } from 'recharts';
@@ -89,3 +92,13 @@ export default function Activity({ data }) {
     </div>
   );
 }
+Activity.defaultProps = {
+  data: [],
+};
+Activity.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.shape({
+    calories: PropTypes.number,
+    kilogram: PropTypes.number,
+    day: PropTypes.string,
+  })),
+};
