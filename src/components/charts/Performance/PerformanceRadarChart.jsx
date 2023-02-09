@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer,
 } from 'recharts';
@@ -36,3 +37,14 @@ export default function PerformanceRadarChart({ data }) {
     </div>
   );
 }
+
+PerformanceRadarChart.defaultProps = {
+  data: [],
+};
+
+PerformanceRadarChart.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.shape({
+    kind: PropTypes.string,
+    value: PropTypes.number,
+  })),
+};

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   LineChart, Line, XAxis, CartesianGrid, Tooltip, ResponsiveContainer,
 } from 'recharts';
@@ -16,7 +17,7 @@ export default function SessionLineChart({ data }) {
           height={254}
           data={data}
           margin={{
-            top: 5,
+            top: 50,
             right: 30,
             left: 20,
             bottom: 5,
@@ -51,3 +52,14 @@ export default function SessionLineChart({ data }) {
     </div>
   );
 }
+
+SessionLineChart.defaultProps = {
+  data: [],
+};
+
+SessionLineChart.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.shape({
+    day: PropTypes.string,
+    sessionLength: PropTypes.number,
+  })),
+};

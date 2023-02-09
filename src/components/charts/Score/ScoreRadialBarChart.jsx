@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import {
   RadialBarChart, RadialBar, Legend, PolarAngleAxis, ResponsiveContainer,
 } from 'recharts';
@@ -60,3 +60,10 @@ export default function ScoreRadialBarChart({ data }) {
     </div>
   );
 }
+
+ScoreRadialBarChart.defaultProps = {
+  data: 0,
+};
+ScoreRadialBarChart.propTypes = {
+  data: PropTypes.number,
+};

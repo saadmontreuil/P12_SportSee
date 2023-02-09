@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './Header.module.css';
 
 export default function Header({ user }) {
@@ -12,3 +13,13 @@ export default function Header({ user }) {
     </div>
   );
 }
+
+Header.defaultProps = {
+  user: {},
+};
+
+Header.propTypes = {
+  user: PropTypes.shape({
+    firstName: PropTypes.string,
+  }),
+};
