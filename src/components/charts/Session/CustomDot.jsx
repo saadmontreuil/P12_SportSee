@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Dot } from 'recharts';
 
 export default function CustomDot({ cx, cy }) {
@@ -8,3 +9,13 @@ export default function CustomDot({ cx, cy }) {
     </g>
   );
 }
+
+CustomDot.defaultProps = {
+  cx: 0,
+  cy: 0,
+};
+
+CustomDot.propTypes = {
+  cx: PropTypes.number,
+  cy: PropTypes.number,
+};

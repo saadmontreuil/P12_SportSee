@@ -35,3 +35,15 @@
     color: #74798C;
     font-weight: 500;
   }
+  .back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background: #fbfbfb;
+    padding: 1rem;
+    border-radius: 10px;
+    width: 2rem;
+    height: 2rem;
+  }
+  

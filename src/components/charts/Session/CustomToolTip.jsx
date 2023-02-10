@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import styles from './Session.module.css';
 
 export default function CustomTooltip({ payload }) {
@@ -7,3 +8,14 @@ export default function CustomTooltip({ payload }) {
     </div>
   );
 }
+
+CustomTooltip.defaultProps = {
+  payload: [],
+};
+
+CustomTooltip.propTypes = {
+  payload: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+    value: PropTypes.number,
+  })),
+};

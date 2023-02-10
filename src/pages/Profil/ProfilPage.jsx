@@ -21,7 +21,7 @@ export default function Profil() {
 
   const NUTRIENTS = [
     {
-      name: 'calorie', icon: 'mingcute:fire-fill', color: 'red', type: 'Calories',
+      name: 'calorie', icon: 'mingcute:fire-fill', color: '#FF0000', type: 'Calories',
     },
     {
       name: 'protein', icon: 'mdi:chicken-leg', color: '#4ab8ff', rotate: 2, type: 'Proteins',

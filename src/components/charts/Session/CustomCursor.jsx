@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Rectangle } from 'recharts';
 
 export default function CustomCursor({ points }) {
@@ -11,3 +12,14 @@ export default function CustomCursor({ points }) {
     />
   );
 }
+
+CustomCursor.defaultProps = {
+  points: [],
+};
+
+CustomCursor.propTypes = {
+  points: PropTypes.arrayOf(PropTypes.shape({
+    x: PropTypes.number,
+    y: PropTypes.number,
+  })),
+};

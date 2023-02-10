@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import styles from './Score.module.css';
 
 export default function ContentLegend({ payload }) {
@@ -12,3 +13,14 @@ export default function ContentLegend({ payload }) {
   }
   return null;
 }
+
+ContentLegend.defaultProps = {
+  payload: [],
+};
+
+ContentLegend.propTypes = {
+  payload: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+    value: PropTypes.number,
+  })),
+};

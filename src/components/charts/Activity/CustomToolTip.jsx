@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 import styles from './Activity.module.css';
 
-function CustomToolTip({ payload, active }) {
+export default function CustomToolTip({ payload, active }) {
   if (active && payload && payload.length) {
     return (
       <div className={styles.customTooltip}>
@@ -11,4 +12,16 @@ function CustomToolTip({ payload, active }) {
   }
   return null;
 }
-export default CustomToolTip;
+
+CustomToolTip.defaultProps = {
+  payload: [],
+  active: false,
+};
+
+CustomToolTip.propTypes = {
+  payload: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+    value: PropTypes.number,
+  })),
+  active: PropTypes.bool,
+};
