@@ -8,6 +8,15 @@ import CustomTooltip from './CustomToolTip';
 import CustomCursor from './CustomCursor';
 import CustomDot from './CustomDot';
 
+/**
+
+SessionLineChart is a functional component that creates a line chart to display the average length of sessions over time.
+* @param {Object} data - An object containing the data to be displayed on the chart.
+* @property {Array} data.day - An array of string values representing the days for which data is available.
+* @property {Array} data.sessionLength - An array of numeric values representing the average length of sessions for each day.
+* @returns {JSX.Element} A line chart displaying the average length of sessions over time.
+*/
+
 export default function SessionLineChart({ data }) {
   return (
     <div className={styles.chartLine}>

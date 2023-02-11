@@ -8,7 +8,19 @@ import {
 import CustomToolTip from './CustomToolTip';
 import legendFormatter from './LegendFormatter';
 
+/**
+ * Formats the X-axis tick label.
+ * @param {number} i - The tick label value.
+ * @returns {number} - The formatted tick label.
+ */
+
 const format = (i) => i + 1;
+
+/**
+ * Activity is a React component that displays a bar chart of daily activity data.
+ * @param {Array} props.data - An array of objects that contain the daily activity data.
+ * @returns {JSX.Element} - A React component that displays the bar chart.
+ */
 
 export default function Activity({ data }) {
   return (

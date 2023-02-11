@@ -4,6 +4,21 @@ import PropTypes from 'prop-types';
 import { Icon } from '@iconify/react';
 import styles from './Nutrition.module.css';
 
+/**
+  * Nutrition component to display the data in a Nutrition format
+  *
+  * @param {Object} data - an object that contains the data to be plotted on the chart
+  *
+  * @param {Array} nutRients - an array that contains the nutrients to be displayed
+  * @param {string} nutRients.name - the name of the nutrient
+  * @param {string} nutRients.type - the type of the nutrient
+  * @param {string} nutRients.icon - the icon of the nutrient
+  * @param {string} nutRients.color - the color of the nutrient
+  * @param {number} nutRients.rotate - the rotation of the icon
+
+  * @returns {JSX.Element} A react component that displays the nutrition
+  */
+
 export default function Nutrition({ data, nutRients }) {
   return (
 

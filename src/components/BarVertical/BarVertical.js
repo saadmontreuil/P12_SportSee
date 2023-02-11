@@ -3,6 +3,14 @@ import PropTypes from 'prop-types';
 import { Icon } from '@iconify/react';
 import styles from './BarVertical.module.css';
 
+/**
+ * BarVertical is a React component that displays a vertical bar with icons and text.
+ * @param {Array} props.icons - An array of objects that
+ * contain the icon and color for each icon to be displayed.
+ * @param {string} props.text - The text to be displayed alongside the icons.
+ * @returns {JSX.Element} - A React component that displays the vertical bar.
+ */
+
 export default function BarVertical({ icons, text }) {
   return (
     <div className={styles.verticalBar}>

@@ -2,6 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Header.module.css';
 
+/**
+  * Header is a React component that displays a header with a greeting and a message.
+  *
+  * @param {Object} props.user - An object that contains the user's first name.
+  * @returns {JSX.Element} - A React component that displays the header.
+ */
+
 export default function Header({ user }) {
   return (
     <div className={styles.header}>

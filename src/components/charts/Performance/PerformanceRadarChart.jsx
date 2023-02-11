@@ -5,6 +5,15 @@ import {
 } from 'recharts';
 import styles from './Performance.module.css';
 
+/**
+ * PerformanceRadarChart component to display the data in a Radar chart format
+ *
+ * @param {Object} data - an object that contains the data to be plotted on the chart
+ * @param {Array} data.kind - an array that contains the categories for the data
+ * @param {Array} data.value - an array that contains the values for each category
+ *
+ * @returns {JSX.Element} A react component that displays the radar chart
+ */
 export default function PerformanceRadarChart({ data }) {
   return (
     <div className={styles.chartRadar}>
