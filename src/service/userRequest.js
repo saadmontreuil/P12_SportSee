@@ -1,10 +1,23 @@
+/* eslint-disable import/prefer-default-export */
 import axios from 'axios';
 import {
   USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE,
 } from '../mockData/data';
 import UserModel from './model/UserModel';
 
-const isMockData = true;
+const isMockData = false;
+
+/**
+*
+
+*@param {string} userId - The id of the user to fetch data for.
+
+*@returns {Promise<UserModel>} A Promise that returns a UserModel instance,
+* or null if there was an error.
+
+*This function fetches user data from either a mock data source or a REST API endpoint.
+*If the isMockData constant is set to true or false, the function returns a UserModel instance
+*/
 const getUser = async (userId) => {
   try {
     let userData;
@@ -34,6 +47,5 @@ const getUser = async (userId) => {
 };
 
 export {
-  // eslint-disable-next-line import/prefer-default-export
   getUser,
 };

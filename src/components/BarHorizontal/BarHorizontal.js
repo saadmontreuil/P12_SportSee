@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom';
 import logo from '../../images/logo.svg';
 import styles from './BarHorizontal.module.css';
 
+/**
+* BarHorizontal is a React component that displays a Horizontal bar with icons and text.
+* @returns {JSX.Element}  A React component that displays the Horizontal bar.
+*/
+
 export default function BarHorizontal() {
   return (
     <nav className={styles.horizontalBar}>

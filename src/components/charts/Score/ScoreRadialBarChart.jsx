@@ -6,6 +6,13 @@ import {
 import styles from './Score.module.css';
 import ContentLegend from './LegendFormatter';
 
+/**
+
+Component that displays a radial bar chart representing the score.
+@param {number} props.data - The score data to be plotted on the radial bar chart.
+@returns {JSX} A radial bar chart component that displays the score.
+*/
+
 export default function ScoreRadialBarChart({ data }) {
   const score = data * 100;
   const value = [{ value: score }];

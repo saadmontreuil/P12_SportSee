@@ -10,6 +10,13 @@ import PerformanceRadarChart from '../../components/charts/Performance/Performan
 import ScoreRadialBarChart from '../../components/charts/Score/ScoreRadialBarChart';
 import Nutrition from '../../components/Nutrition/Nutrition';
 
+/**
+
+@function
+@desc Profil component is used to display the dashboard for a user's profile page.
+ It fetches the user data using the getUser method, which is called using useEffect hook
+@returns {JSX.Element} - returns the JSX Element of the component
+*/
 export default function Profil() {
   const [dataUser, setDataUser] = useState(null);
   const [userActivity, setUserActivity] = useState(null);
@@ -33,7 +40,9 @@ export default function Profil() {
       name: 'lipid', icon: 'fa-solid:hamburger', color: '#fd5181', type: 'Lipides',
     },
   ];
-
+  /**
+  The useEffect hook to fetch the data for the user when the component is mounted.
+  */
   useEffect(() => {
     const fetchData = async () => {
       const userInfos = await getUser(userId);
