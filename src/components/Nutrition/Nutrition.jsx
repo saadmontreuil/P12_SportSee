@@ -22,18 +22,14 @@ import styles from './Nutrition.module.css';
 export default function Nutrition({ data, nutRients }) {
   return (
 
-    <div className={styles.nutrition}>
-      {nutRients.map((nutrient) => (
-        <div className={styles.tag} key={nutrient.name}>
-          <div className={`${styles.back}`} style={{ backgroundColor: `${nutrient.color}33` }}>
-            <Icon className={styles.icons} icon={nutrient.icon} color={nutrient.color} rotate={nutrient.rotate || 0} />
-          </div>
-          <div className={styles.tagText}>
-            <span>{data?.[nutrient.name]}g </span>
-            <span className={styles.type}>{nutrient.type}</span>
-          </div>
-        </div>
-      ))}
+    <div className={styles.tag} key={nutRients.name}>
+      <div className={`${styles.back}`} style={{ backgroundColor: `${nutRients.color}33` }}>
+        <Icon className={styles.icons} icon={nutRients.icon} color={nutRients.color} rotate={nutRients.rotate || 0} />
+      </div>
+      <div className={styles.tagText}>
+        <span>{data?.[nutRients.name]}g </span>
+        <span className={styles.type}>{nutRients.type}</span>
+      </div>
     </div>
 
   );

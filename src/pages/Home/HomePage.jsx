@@ -2,6 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Home.module.css';
 
+/**
+HomePage component that displays buttons for accessing user profiles.
+@component
+@returns {JSX.Element} Returns a JSX element that displays buttons for accessing user profiles.
+*/
+
 export default function HomePage() {
   return (
     <div className={styles.home}>

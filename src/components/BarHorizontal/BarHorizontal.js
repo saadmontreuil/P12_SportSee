@@ -4,7 +4,7 @@ import logo from '../../images/logo.svg';
 import styles from './BarHorizontal.module.css';
 
 /**
-* BarHorizontal is a React component that displays a Horizontal bar with icons and text.
+* BarHorizontal is a React component that displays a Horizontal bar with the logo and items.
 * @returns {JSX.Element}  A React component that displays the Horizontal bar.
 */
 

@@ -1,0 +1,22 @@
+{
+    "source": {
+        "include": ["src"],
+        "includePattern": "(.js|.jsx)",
+        "excludePattern": "(node_modules/|docs)"
+    },
+    "plugins": ["plugins/markdown"],
+    "recurseDepth": 10,
+    "templates": {
+        "cleverLinks": true,
+        "monospaceLinks": true,
+        "better-docs": {
+            "name":"sportSee"
+        }
+    },
+    "opts": {
+        "recurse": true,
+        "destination": "./docs/",
+        "verbose": true,
+        "readme": "./README.md"
+    }
+}

@@ -24,9 +24,17 @@ export default class UserModel {
       ];
       return { ...session, day: Day[session.day - 1] };
     });
+    const kinds = {
+      1: 'cardio',
+      2: 'énergie',
+      3: 'endurance',
+      4: 'force',
+      5: 'vitesse',
+      6: 'intensité',
+    };
     this.data = data.data ? data.data.map((item) => ({
       value: item.value,
-      kind: this.kind[item.kind],
-    })) : [];
+      kind: kinds[item.kind],
+    })).reverse() : [];
   }
 }

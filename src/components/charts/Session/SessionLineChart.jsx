@@ -2,12 +2,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  LineChart, Line, XAxis, CartesianGrid, Tooltip, ResponsiveContainer,
+  LineChart, Line, XAxis, CartesianGrid, Tooltip, ResponsiveContainer, Dot,
 } from 'recharts';
 import styles from './Session.module.css';
 import CustomTooltip from './CustomToolTip';
 import CustomCursor from './CustomCursor';
-import CustomDot from './CustomDot';
+
+function CustomDot({ cx, cy }) {
+  return (
+    <g>
+      <Dot r={9} fill="white" cy={cy} cx={cx} opacity="0.4" />
+      <Dot r={3} fill="white" cy={cy} cx={cx} />
+    </g>
+  );
+}
 
 /**
 
@@ -44,6 +52,7 @@ export default function SessionLineChart({ data }) {
             type="monotone"
             dataKey="sessionLength"
             stroke="white"
+            dot={false}
             activeDot={<CustomDot />}
           />
           <text
@@ -64,6 +73,7 @@ export default function SessionLineChart({ data }) {
 }
 
 SessionLineChart.defaultProps = {
+
   data: [],
 };
 

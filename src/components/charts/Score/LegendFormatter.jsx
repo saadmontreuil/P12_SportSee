@@ -1,6 +1,12 @@
 import PropTypes from 'prop-types';
 import styles from './Score.module.css';
 
+/**
+*ContentLegend component that displays the percentage of the user's goal.
+*@param {Array} payload - An array containing the data of the user's goal. TOTO
+*@returns {JSX.Element} - Returns a TOTO component that displays the percentage of the user's goal.
+*/
+
 export default function ContentLegend({ payload }) {
   if (payload && payload.length) {
     return (
