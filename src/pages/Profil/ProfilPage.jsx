@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
-import { getUser } from '../../service/userRequest';
+import getUser from '../../service/userRequest';
 import Header from '../../components/Header/Header';
 import Activity from '../../components/charts/Activity/Activity';
 import styles from './Profil.module.css';
@@ -16,7 +16,7 @@ import Nutrition from '../../components/Nutrition/Nutrition';
  It fetches the user data using the getUser method, which is called using useEffect hook
 @returns {JSX.Element} - returns the JSX Element of the component
 */
-export default function Profil() {
+function Profil() {
   const [dataUser, setDataUser] = useState(null);
   const [userActivity, setUserActivity] = useState(null);
   const [userAverageSession, setUserAverageSession] = useState(null);
@@ -80,10 +80,12 @@ export default function Profil() {
       </div>
       <div className={styles.nutrition}>
         {NUTRIENTS.map((nutrient) => (
-          <Nutrition data={dataUser} nutRients={nutrient} />
+          <Nutrition key={nutrient.name} data={dataUser} nutRients={nutrient} />
         ))}
       </div>
 
     </div>
   );
 }
+
+export default Profil;

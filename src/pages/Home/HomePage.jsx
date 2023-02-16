@@ -8,7 +8,7 @@ HomePage component that displays buttons for accessing user profiles.
 @returns {JSX.Element} Returns a JSX element that displays buttons for accessing user profiles.
 */
 
-export default function HomePage() {
+function HomePage() {
   return (
     <div className={styles.home}>
       <Link to="profil/12" className={styles.btn}>
@@ -20,3 +20,5 @@ export default function HomePage() {
     </div>
   );
 }
+
+export default HomePage;

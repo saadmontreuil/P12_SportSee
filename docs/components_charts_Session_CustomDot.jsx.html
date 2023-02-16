@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: components/BarHorizontal/BarHorizontal.js</title>
+    <title>JSDoc: Source: components/charts/Session/CustomDot.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: components/BarHorizontal/BarHorizontal.js</h1>
+    <h1 class="page-title">Source: components/charts/Session/CustomDot.jsx</h1>
 
     
 
@@ -26,50 +26,24 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import React from 'react';
-import { Link } from 'react-router-dom';
-import logo from '../../images/logo.svg';
-import styles from './BarHorizontal.module.css';
+            <pre class="prettyprint source linenums"><code>import { Dot } from 'recharts';
 
 /**
-* BarHorizontal is a React component that displays a Horizontal bar with the logo and items.
-* @returns {JSX.Element}  A React component that displays the Horizontal bar.
-*/
-
-function BarHorizontal() {
+  * CustomDot is a functional component that creates a custom dot for the line chart.
+  * @property {number} props.cx - The x coordinate of the dot.
+  * @property {number} props.cy - The y coordinate of the dot.
+  * @returns {JSX.Element} A custom dot for the line chart.
+  */
+function CustomDot({ cx, cy }) {
   return (
-    &lt;nav className={styles.horizontalBar}>
-      &lt;Link to="/" className="logoBar">
-        &lt;img src={logo} alt="SportSee" className={styles.logo} />
-      &lt;/Link>
-
-      &lt;ul className={styles.navMenu}>
-        &lt;li className="item">
-          &lt;Link to="/" className={styles.navLink}>
-            Accueil
-          &lt;/Link>
-        &lt;/li>
-        &lt;li className="item">
-          &lt;Link to="/profil" className={styles.navLink}>
-            Profil
-          &lt;/Link>
-        &lt;/li>
-        &lt;li className="item">
-          &lt;Link to="/reglage" className={styles.navLink}>
-            Réglage
-          &lt;/Link>
-        &lt;/li>
-        &lt;li className="item">
-          &lt;Link to="/communaute" className={styles.navLink}>
-            Communauté
-          &lt;/Link>
-        &lt;/li>
-      &lt;/ul>
-    &lt;/nav>
+    &lt;g>
+      &lt;Dot r={9} fill="white" cy={cy} cx={cx} opacity="0.4" />
+      &lt;Dot r={3} fill="white" cy={cy} cx={cx} />
+    &lt;/g>
   );
 }
 
-export default BarHorizontal;
+export default CustomDot;
 </code></pre>
         </article>
     </section>

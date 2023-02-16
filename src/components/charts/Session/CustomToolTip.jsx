@@ -7,7 +7,7 @@ import styles from './Session.module.css';
  * @returns {JSX.Element} The JSX component that displays the tooltip.
  */
 
-export default function CustomTooltip({ payload }) {
+function CustomTooltip({ payload }) {
   return (
     <div className={styles.CustomTooltip}>
       <p>{`${payload[0]?.value} `}min</p>
@@ -25,3 +25,5 @@ CustomTooltip.propTypes = {
     value: PropTypes.number,
   })),
 };
+
+export default CustomTooltip;

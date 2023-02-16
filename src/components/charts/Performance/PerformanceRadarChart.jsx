@@ -14,7 +14,7 @@ import styles from './Performance.module.css';
  *
  * @returns {JSX.Element} A react component that displays the radar chart
  */
-export default function PerformanceRadarChart({ data }) {
+function PerformanceRadarChart({ data }) {
   return (
     <div className={styles.chartRadar}>
       <ResponsiveContainer width="100%" height="100%">
@@ -57,3 +57,5 @@ PerformanceRadarChart.propTypes = {
     value: PropTypes.number,
   })),
 };
+
+export default PerformanceRadarChart;

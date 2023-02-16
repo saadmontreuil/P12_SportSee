@@ -1,7 +1,13 @@
 import PropTypes from 'prop-types';
 import { Rectangle } from 'recharts';
 
-export default function CustomCursor({ points }) {
+/**
+  * CustomCursor component to display a cursor on the chart.
+  * @param {Array} props.points - The data to be displayed on hover.
+  * @returns {JSX} The JSX representation of the component.
+  */
+
+function CustomCursor({ points }) {
   return (
     <Rectangle
       fill="#000000"
@@ -23,3 +29,5 @@ CustomCursor.propTypes = {
     y: PropTypes.number,
   })),
 };
+
+export default CustomCursor;

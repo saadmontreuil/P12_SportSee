@@ -8,7 +8,7 @@ import styles from './BarHorizontal.module.css';
 * @returns {JSX.Element}  A React component that displays the Horizontal bar.
 */
 
-export default function BarHorizontal() {
+function BarHorizontal() {
   return (
     <nav className={styles.horizontalBar}>
       <Link to="/" className="logoBar">
@@ -40,3 +40,5 @@ export default function BarHorizontal() {
     </nav>
   );
 }
+
+export default BarHorizontal;

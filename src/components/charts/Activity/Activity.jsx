@@ -22,7 +22,7 @@ const format = (i) => i + 1;
  * @param {Array} props.data - An array of objects that contain the daily activity data.
  * @returns {JSX.Element} - A React component that displays the bar chart.
  */
-export default function Activity({ data }) {
+function Activity({ data }) {
   return (
     <div style={{ width: '100%', height: 200 }}>
       <ResponsiveContainer>
@@ -114,3 +114,5 @@ Activity.propTypes = {
     day: PropTypes.string,
   })),
 };
+
+export default Activity;

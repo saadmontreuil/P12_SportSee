@@ -11,7 +11,7 @@ import styles from './BarVertical.module.css';
  * @returns {JSX.Element} - A React component that displays the vertical bar.
  */
 
-export default function BarVertical({ icons, text }) {
+function BarVertical({ icons, text }) {
   return (
     <div className={styles.verticalBar}>
       <div className={styles.navIcon}>
@@ -40,3 +40,5 @@ BarVertical.propTypes = {
   ),
   text: PropTypes.string,
 };
+
+export default BarVertical;

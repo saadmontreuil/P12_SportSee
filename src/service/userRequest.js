@@ -46,6 +46,4 @@ const getUser = async (userId) => {
   return null;
 };
 
-export {
-  getUser,
-};
+export default getUser;

@@ -7,7 +7,7 @@ import styles from './Score.module.css';
 *@returns {JSX.Element} - Returns a TOTO component that displays the percentage of the user's goal.
 */
 
-export default function ContentLegend({ payload }) {
+function ContentLegend({ payload }) {
   if (payload && payload.length) {
     return (
       <div className={styles.legend}>
@@ -30,3 +30,5 @@ ContentLegend.propTypes = {
     value: PropTypes.number,
   })),
 };
+
+export default ContentLegend;

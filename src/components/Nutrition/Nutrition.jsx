@@ -19,10 +19,10 @@ import styles from './Nutrition.module.css';
   * @returns {JSX.Element} A react component that displays the nutrition
   */
 
-export default function Nutrition({ data, nutRients }) {
+function Nutrition({ data, nutRients }) {
   return (
 
-    <div className={styles.tag} key={nutRients.name}>
+    <div className={styles.tag}>
       <div className={`${styles.back}`} style={{ backgroundColor: `${nutRients.color}33` }}>
         <Icon className={styles.icons} icon={nutRients.icon} color={nutRients.color} rotate={nutRients.rotate || 0} />
       </div>
@@ -46,11 +46,13 @@ Nutrition.propTypes = {
     carbs: PropTypes.number,
     protein: PropTypes.number,
   }),
-  nutRients: PropTypes.arrayOf(PropTypes.shape({
+  nutRients: PropTypes.shape({
     name: PropTypes.string,
+    type: PropTypes.string,
     icon: PropTypes.string,
     color: PropTypes.string,
-    type: PropTypes.string,
     rotate: PropTypes.number,
-  })).isRequired,
+  }).isRequired,
 };
+
+export default Nutrition;

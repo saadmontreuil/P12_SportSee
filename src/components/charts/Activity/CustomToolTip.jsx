@@ -9,7 +9,7 @@ import styles from './Activity.module.css';
 * @returns {JSX} The JSX representation of the component.
 */
 
-export default function CustomToolTip({ payload, active }) {
+function CustomToolTip({ payload, active }) {
   if (active && payload && payload.length) {
     return (
       <div className={styles.customTooltip}>
@@ -33,3 +33,5 @@ CustomToolTip.propTypes = {
   })),
   active: PropTypes.bool,
 };
+
+export default CustomToolTip;

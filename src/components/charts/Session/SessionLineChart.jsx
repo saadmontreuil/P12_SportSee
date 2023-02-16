@@ -2,21 +2,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  LineChart, Line, XAxis, CartesianGrid, Tooltip, ResponsiveContainer, Dot,
+  LineChart, Line, XAxis, CartesianGrid, Tooltip, ResponsiveContainer,
 } from 'recharts';
 import styles from './Session.module.css';
 import CustomTooltip from './CustomToolTip';
 import CustomCursor from './CustomCursor';
-
-function CustomDot({ cx, cy }) {
-  return (
-    <g>
-      <Dot r={9} fill="white" cy={cy} cx={cx} opacity="0.4" />
-      <Dot r={3} fill="white" cy={cy} cx={cx} />
-    </g>
-  );
-}
-
+import CustomDot from './CustomDot';
 /**
 
 SessionLineChart is a functional component that creates a line chart to display the average length of sessions over time.
@@ -26,7 +17,7 @@ SessionLineChart is a functional component that creates a line chart to display 
 * @returns {JSX.Element} A line chart displaying the average length of sessions over time.
 */
 
-export default function SessionLineChart({ data }) {
+function SessionLineChart({ data }) {
   return (
     <div className={styles.chartLine}>
       <ResponsiveContainer width="100%" height="100%">
@@ -83,3 +74,5 @@ SessionLineChart.propTypes = {
     sessionLength: PropTypes.number,
   })),
 };
+
+export default SessionLineChart;

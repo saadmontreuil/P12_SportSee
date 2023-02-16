@@ -13,7 +13,7 @@ Component that displays a radial bar chart representing the score.
 @returns {JSX} A radial bar chart component that displays the score.
 */
 
-export default function ScoreRadialBarChart({ data }) {
+function ScoreRadialBarChart({ data }) {
   const score = data * 100;
   const value = [{ value: score }];
   console.log(value);
@@ -74,3 +74,5 @@ ScoreRadialBarChart.defaultProps = {
 ScoreRadialBarChart.propTypes = {
   data: PropTypes.number,
 };
+
+export default ScoreRadialBarChart;
