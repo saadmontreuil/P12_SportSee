@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# Project 12 - SportSee
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+This repository contains a SportSee dashboard project that fetches user data from either a mock data source or a REST API endpoint, and build a user dashboard. This project is built using React and JavaScript.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- Fetching user data from an API provided by Openclassrooms.
+- Displaying user data on the dashboard, including:
+- - the user's main data.
+- - user's activity data.
+- - user's average sessions data.
+- - user's performance data.
+- - The possibility to display the user data either in real data, or in mock data.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Dependencies
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This project has the following dependencies:
 
-### `npm test`
+- react (^18.2.0)
+- prop-types (^15.8.1)
+- react-dom (^18.2.0)
+- recharts (^2.3.2)
+- axios (^1.2.5)
+- jsdoc (^4.0.0)
+- react-router-dom (^6.7.0)
+- react-scripts (5.0.1)
+- iconify/react (^4.1.0)
+- eslint (^8.33.0)
+- HTML
+- CSS
+- JS
+- Visual Studio Code
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+### 1. Install and Launch the Back-End
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Clone the API repository from https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard
+- Follow the README procedure `Project (without Docker)`
+- Launch the API with `npm start` or `yarn start`
+- The API is available at http://localhost:3000
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Query Examples
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Get performance data of user with ID 12:  http://localhost:3000/user/12/performance 
+- Get activity data of user with ID 18 : http://localhost:3000/user/18/activity
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 2. Install and Launch the Front-End
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Clone the project by using the following command: `git clone https://github.com/saadmontreuil/P12_SportSee.git`
+- Install the project's dependencies by using the following command:`npm install` or `yarn install`
+- Run the Front-End with `npm start` or `yarn start`
+- Two users are available at the following URLs:
+  - http://localhost:3001/profil/12
+  - http://localhost:3001/profil/18
+- Change the value of isMockData to false to use the API: isMockData = false;
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Documentation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- The documentation is available in the `docs` folder.
+- To generate the documentation, use the following command: `npm run doc`
+- The documentation is generated using JSDoc.

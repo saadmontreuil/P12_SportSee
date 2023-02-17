@@ -43,44 +43,89 @@
 
 
     <section>
-        <article><h1>Getting Started with Create React App</h1>
-<p>This project was bootstrapped with <a href="https://github.com/facebook/create-react-app">Create React App</a>.</p>
-<h2>Available Scripts</h2>
-<p>In the project directory, you can run:</p>
-<h3><code>npm start</code></h3>
-<p>Runs the app in the development mode.<br>
-Open <a href="http://localhost:3000">http://localhost:3000</a> to view it in your browser.</p>
-<p>The page will reload when you make changes.<br>
-You may also see any lint errors in the console.</p>
-<h3><code>npm test</code></h3>
-<p>Launches the test runner in the interactive watch mode.<br>
-See the section about <a href="https://facebook.github.io/create-react-app/docs/running-tests">running tests</a> for more information.</p>
-<h3><code>npm run build</code></h3>
-<p>Builds the app for production to the <code>build</code> folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.</p>
-<p>The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!</p>
-<p>See the section about <a href="https://facebook.github.io/create-react-app/docs/deployment">deployment</a> for more information.</p>
-<h3><code>npm run eject</code></h3>
-<p><strong>Note: this is a one-way operation. Once you <code>eject</code>, you can't go back!</strong></p>
-<p>If you aren't satisfied with the build tool and configuration choices, you can <code>eject</code> at any time. This command will remove the single build dependency from your project.</p>
-<p>Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except <code>eject</code> will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.</p>
-<p>You don't have to ever use <code>eject</code>. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.</p>
-<h2>Learn More</h2>
-<p>You can learn more in the <a href="https://facebook.github.io/create-react-app/docs/getting-started">Create React App documentation</a>.</p>
-<p>To learn React, check out the <a href="https://reactjs.org/">React documentation</a>.</p>
-<h3>Code Splitting</h3>
-<p>This section has moved here: <a href="https://facebook.github.io/create-react-app/docs/code-splitting">https://facebook.github.io/create-react-app/docs/code-splitting</a></p>
-<h3>Analyzing the Bundle Size</h3>
-<p>This section has moved here: <a href="https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size">https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size</a></p>
-<h3>Making a Progressive Web App</h3>
-<p>This section has moved here: <a href="https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app">https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app</a></p>
-<h3>Advanced Configuration</h3>
-<p>This section has moved here: <a href="https://facebook.github.io/create-react-app/docs/advanced-configuration">https://facebook.github.io/create-react-app/docs/advanced-configuration</a></p>
-<h3>Deployment</h3>
-<p>This section has moved here: <a href="https://facebook.github.io/create-react-app/docs/deployment">https://facebook.github.io/create-react-app/docs/deployment</a></p>
-<h3><code>npm run build</code> fails to minify</h3>
-<p>This section has moved here: <a href="https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify">https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify</a></p></article>
+        <article><h1>Project 12 - SportSee</h1>
+<h2>Description</h2>
+<p>This repository contains a SportSee dashboard project that fetches user data from either a mock data source or a REST API endpoint, and build a user dashboard. This project is built using React and JavaScript.</p>
+<h2>Features</h2>
+<ul>
+<li>Fetching user data from an API provided by Openclassrooms.</li>
+<li>Displaying user data on the dashboard, including:</li>
+<li>
+<ul>
+<li>the user's main data.</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>user's activity data.</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>user's average sessions data.</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>user's performance data.</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>The possibility to display the user data either in real data, or in mock data.</li>
+</ul>
+</li>
+</ul>
+<h2>Dependencies</h2>
+<p>This project has the following dependencies:</p>
+<ul>
+<li>react (^18.2.0)</li>
+<li>prop-types (^15.8.1)</li>
+<li>react-dom (^18.2.0)</li>
+<li>recharts (^2.3.2)</li>
+<li>axios (^1.2.5)</li>
+<li>jsdoc (^4.0.0)</li>
+<li>react-router-dom (^6.7.0)</li>
+<li>react-scripts (5.0.1)</li>
+<li>iconify/react (^4.1.0)</li>
+<li>eslint (^8.33.0)</li>
+<li>HTML</li>
+<li>CSS</li>
+<li>JS</li>
+<li>Visual Studio Code</li>
+</ul>
+<h2>Installation</h2>
+<h3>1. Install and Launch the Back-End</h3>
+<ul>
+<li>Clone the API repository from https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard</li>
+<li>Follow the README procedure <code>Project (without Docker)</code></li>
+<li>Launch the API with <code>npm start</code> or <code>yarn start</code></li>
+<li>The API is available at http://localhost:3000</li>
+</ul>
+<h4>Query Examples</h4>
+<ul>
+<li>Get performance data of user with ID 12:  http://localhost:3000/user/12/performance</li>
+<li>Get activity data of user with ID 18 : http://localhost:3000/user/18/activity</li>
+</ul>
+<h3>2. Install and Launch the Front-End</h3>
+<ul>
+<li>Clone the project by using the following command: <code>git clone https://github.com/saadmontreuil/P12_SportSee.git</code></li>
+<li>Install the project's dependencies by using the following command:<code>npm install</code> or <code>yarn install</code></li>
+<li>Run the Front-End with <code>npm start</code> or <code>yarn start</code></li>
+<li>Two users are available at the following URLs:
+<ul>
+<li>http://localhost:3001/profil/12</li>
+<li>http://localhost:3001/profil/18</li>
+</ul>
+</li>
+<li>Change the value of isMockData to false to use the API: isMockData = false;</li>
+</ul>
+<h2>Documentation</h2>
+<ul>
+<li>The documentation is available in the <code>docs</code> folder.</li>
+<li>To generate the documentation, use the following command: <code>npm run doc</code></li>
+<li>The documentation is generated using JSDoc.</li>
+</ul></article>
     </section>
 
 
@@ -97,7 +142,7 @@ Your app is ready to be deployed!</p>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Thu Feb 16 2023 14:04:56 GMT+0100 (heure normale d’Europe centrale)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Sat Feb 18 2023 00:15:18 GMT+0100 (heure normale d’Europe centrale)
 </footer>
 
 <script> prettyPrint(); </script>
