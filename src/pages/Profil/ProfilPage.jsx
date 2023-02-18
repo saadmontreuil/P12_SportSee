@@ -63,8 +63,6 @@ function Profil() {
     return <Navigate to="/404" />;
   }
 
-  console.log(dataUser?.score);
-
   return (
     <div className={styles.profile}>
       <div className={styles.dashboard}>

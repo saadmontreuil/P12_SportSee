@@ -6,6 +6,7 @@ import { Dot } from 'recharts';
   * @property {number} props.cy - The y coordinate of the dot.
   * @returns {JSX.Element} A custom dot for the line chart.
   */
+// eslint-disable-next-line react/prop-types
 function CustomDot({ cx, cy }) {
   return (
     <g>

@@ -16,7 +16,7 @@ Component that displays a radial bar chart representing the score.
 function ScoreRadialBarChart({ data }) {
   const score = data * 100;
   const value = [{ value: score }];
-  console.log(value);
+
   return (
     <div className={styles.chartRadial}>
       <ResponsiveContainer>

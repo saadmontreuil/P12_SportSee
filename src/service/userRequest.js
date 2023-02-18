@@ -41,6 +41,7 @@ const getUser = async (userId) => {
     }
     return new UserModel(userData);
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error(`Error while getting user data: ${error}`);
   }
   return null;
