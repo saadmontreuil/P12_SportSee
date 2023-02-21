@@ -11,24 +11,18 @@ import styles from './BarVertical.module.css';
  * @returns {JSX.Element} - A React component that displays the vertical bar.
  */
 
-function BarVertical({ icons, text }) {
+function BarVertical({ icons }) {
   return (
-    <div className={styles.verticalBar}>
-      <div className={styles.navIcon}>
-        {icons.map((iconData) => (
-          <div className={styles.icon} key={iconData.icon}>
-            <Icon icon={iconData.icon} color={iconData.color} />
-          </div>
-        ))}
-      </div>
-      <p className={styles.navText}>{text}</p>
+
+    <div className={styles.icon} key={icons.icon}>
+      <Icon icon={icons.icon} color={icons.color} />
     </div>
+
   );
 }
 
 BarVertical.defaultProps = {
   icons: [],
-  text: '',
 };
 
 BarVertical.propTypes = {
@@ -38,7 +32,6 @@ BarVertical.propTypes = {
       color: PropTypes.string,
     }),
   ),
-  text: PropTypes.string,
 };
 
 export default BarVertical;

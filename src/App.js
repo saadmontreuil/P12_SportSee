@@ -5,6 +5,7 @@ import BarVertical from './components/BarVertical/BarVertical';
 import Profil from './pages/Profil/ProfilPage';
 import HomePage from './pages/Home/HomePage';
 import Error404Page from './pages/Error/Error404Page';
+import stylesBar from './components/BarVertical/BarVertical.module.css';
 
 function App() {
   const ICONS = [
@@ -18,7 +19,14 @@ function App() {
     <div className={styles.App}>
       <BarHorizontal />
       <div className={styles.content}>
-        <BarVertical icons={ICONS} text="Copyright, SportSee 2020" />
+        <div className={stylesBar.verticalBar}>
+          <div className={stylesBar.navIcon}>
+            {ICONS.map((iconData) => (
+              <BarVertical icons={iconData} />
+            ))}
+          </div>
+          <p className={stylesBar.navText}>Copyright, SportSee 2020</p>
+        </div>
         <Routes>
           <Route path="/profil/:id" element={<Profil />} />
           <Route path="/" element={<HomePage />} />
