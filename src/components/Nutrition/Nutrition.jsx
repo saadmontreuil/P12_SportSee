@@ -20,6 +20,7 @@ import styles from './Nutrition.module.css';
   */
 
 function Nutrition({ data, nutRients }) {
+  const unit = nutRients.type === 'Calories' ? 'kCal' : 'g';
   return (
 
     <div className={styles.tag}>
@@ -27,7 +28,7 @@ function Nutrition({ data, nutRients }) {
         <Icon className={styles.icons} icon={nutRients.icon} color={nutRients.color} rotate={nutRients.rotate || 0} />
       </div>
       <div className={styles.tagText}>
-        <span>{data?.[nutRients.name]}g </span>
+        <span>{data?.[nutRients.name]}{unit} </span>
         <span className={styles.type}>{nutRients.type}</span>
       </div>
     </div>
